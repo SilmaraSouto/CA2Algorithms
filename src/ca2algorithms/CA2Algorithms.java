@@ -4,6 +4,7 @@
  */
 package ca2algorithms;
 import controller.AppController;
+import model.Employee;
 import model.EmployeeRepository;
 import model.EmployeeTree;
 import view.ConsoleView;
@@ -21,13 +22,14 @@ public class CA2Algorithms {
 
     public static void main(String[] args) {
 
-        ConsoleView view = new ConsoleView();
-        EmployeeRepository repository = new EmployeeRepository();
-        EmployeeTree employeeTree = new EmployeeTree();
+        
+        // dentro do main, depois de criar o repository:
+EmployeeRepository repository = new EmployeeRepository();
+repository.loadFromFile("Applicants_Form.txt");
 
-        AppController controller = new AppController(view, repository, employeeTree);
-        controller.run();
-    }
+for (Employee e : repository.getEmployees()) {
+    System.out.println(e);
 }
 
-
+    }
+}

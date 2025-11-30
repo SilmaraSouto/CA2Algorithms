@@ -1,22 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
-
-/**
- *
- * @author Acer
- */
-
 
 public class Employee {
 
     private String name;
-    private ManagerType managerType;
-    private Department department;
+    private String managerType;
+    private String department;
 
-    public Employee(String name, ManagerType managerType, Department department) {
+    public Employee(String name, String managerType, String department) {
         this.name = name;
         this.managerType = managerType;
         this.department = department;
@@ -26,11 +16,11 @@ public class Employee {
         return name;
     }
 
-    public ManagerType getManagerType() {
+    public String getManagerType() {
         return managerType;
     }
 
-    public Department getDepartment() {
+    public String getDepartment() {
         return department;
     }
 

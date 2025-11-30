@@ -1,19 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
+
 import model.EmployeeRepository;
 import model.EmployeeTree;
 import view.ConsoleView;
-
-
-/**
- *
- * @author Acer
- */
-
-
 
 public class AppController {
 
@@ -40,22 +29,39 @@ public class AppController {
             }
 
             switch (option) {
-                case SORT -> handleSort();
-                case SEARCH -> handleSearch();
-                case ADD_RECORDS -> handleAddRecords();
-                case BINARY_TREE -> handleBinaryTree();
-                case EXIT -> {
+                case SORT:
+                    handleSort();
+                    break;
+
+                case SEARCH:
+                    handleSearch();
+                    break;
+
+                case ADD_RECORDS:
+                    handleAddRecords();
+                    break;
+
+                case BINARY_TREE:
+                    handleBinaryTree();
+                    break;
+
+                case EXIT:
                     view.showMessage("Exiting application. Goodbye!");
                     running = false;
-                }
+                    break;
+
+                default:
+                    view.showMessage("Unknown option.");
             }
         }
     }
 
     private void handleSort() {
         view.showMessage("SORT selected (to be implemented).");
-        // aqui depois vamos chamar repository.sortEmployeesByName();
-        // e mostrar os primeiros 20
+        // Example (later):
+        // repository.loadFromFile("Applicants_Form.txt");
+        // repository.sortEmployeesByNameRecursively();
+        // repository.printFirst20Employees();
     }
 
     private void handleSearch() {

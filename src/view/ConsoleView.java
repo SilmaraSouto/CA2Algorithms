@@ -1,16 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
 
-/**
- *
- * @author Acer
- */
-package ie.cct.ca2.view;
-
-import ie.cct.ca2.controller.MenuOption;
+import controller.MenuOption;
 import java.util.Scanner;
 
 public class ConsoleView {
@@ -37,14 +27,20 @@ public class ConsoleView {
             return null;
         }
 
-        return switch (choice) {
-            case 1 -> MenuOption.SORT;
-            case 2 -> MenuOption.SEARCH;
-            case 3 -> MenuOption.ADD_RECORDS;
-            case 4 -> MenuOption.BINARY_TREE;
-            case 5 -> MenuOption.EXIT;
-            default -> null;
-        };
+        switch (choice) {
+            case 1:
+                return MenuOption.SORT;
+            case 2:
+                return MenuOption.SEARCH;
+            case 3:
+                return MenuOption.ADD_RECORDS;
+            case 4:
+                return MenuOption.BINARY_TREE;
+            case 5:
+                return MenuOption.EXIT;
+            default:
+                return null;
+        }
     }
 
     public void showMessage(String message) {
